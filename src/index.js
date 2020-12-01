@@ -1,7 +1,8 @@
-import { create, getIndices, storage }  from './utils';
+// eslint-disable-next-line import/named
+import { create, getIndices, storage } from './utils';
 import { startGame } from './startGame';
 import { getValidComb } from './comb';
-import './style.css'
+import './style.css';
 
 const gameBtns = [
   {
@@ -17,12 +18,12 @@ const gameBtns = [
     name: 'Load game',
   },
 ].map(
-  el => create('button', 'nav__btn', el.name, null, ['data-id', el.id])
+  el => create('button', 'nav__btn', el.name, null, ['data-id', el.id]),
 );
 
 const timer = create('div', 'timer__info', [
   create('span', '', 'Time:&nbsp'),
-  create('span', 'timer', '00:00', null, ['data-id','timer']),
+  create('span', 'timer', '00:00', null, ['data-id', 'timer']),
 ]);
 
 const moves = create('div', 'moves__info', [
@@ -34,8 +35,8 @@ let timerId;
 startGame(getValidComb, timerId, { gameBtns, timer, moves });
 
 const menuBtns = document.querySelectorAll('.nav__btn');
-for (let btn of menuBtns) {
-  btn.addEventListener('click', (e) => {
+for (const btn of menuBtns) {
+  btn.addEventListener('click', e => {
     if (e.target.attributes['data-id'].value === 'new-game') {
       startGame(getValidComb, timerId, { gameBtns, timer, moves });
     }
