@@ -13,7 +13,7 @@ module.exports = {
     'prefer-default-export': 'off',
     'import/prefer-default-export': 'warn',
     'no-plusplus': 'off',
-    'arrow-parens': 'warn',
+    'arrow-parens': ['warn', 'as-needed'],
     'comma-dangle': 'warn',
   },
 };
