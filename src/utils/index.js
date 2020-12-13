@@ -1,5 +1,5 @@
-export { create } from './create';
 export * as storage from './storage';
+export { create } from './create';
 
 export function getIndices() {
   const allCells = document.querySelectorAll('.cell__wrapper');
@@ -8,11 +8,11 @@ export function getIndices() {
 
 export function isWon() {
   return getIndices().every(
-      (item,index) => (item === index + 1) ? true : (item === 0)
-    );
+    (item, index) => ((item === index + 1) ? true : (item === 0)),
+  );
 }
 
-export function movesCount(isNewGame=false) {
+export function movesCount(isNewGame = false) {
   const moves = document.querySelector('.moves');
   if (isNewGame) {
     moves.innerHTML = 0;
